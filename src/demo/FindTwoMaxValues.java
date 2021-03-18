@@ -2,22 +2,29 @@ package demo;
 
 public class FindTwoMaxValues {
 
-	public static void main()
+	public static void main(String a[])
 	{
-		int a[] = {8,2,5,6,7,4,1,9};
+		int arr[] = {8,2,5,15,7,4,1,9};
 		
 		int firstmax = 0;
 		int secondmax = 0;
-		
-		for(int i=0;i<a.length;i++)
+		firstmax=arr[0];
+		secondmax=arr[0];
+		for(int i=0;i<arr.length-1;i++)
 		{
-			for(int j=0;j<a.length;j++)
-			{
-				if(firstmax < a[i])
+			 if(firstmax < arr[i+1])
 				{
-				  	
+				  	firstmax=arr[i+1];
+				  	System.out.println(firstmax);
 				}
-			}
+		/*	 if(secondmax < firstmax && secondmax > arr[i+1])
+			 {
+				 secondmax=arr[i+1];
+				 System.out.println(secondmax);
+			 }
+			*/
 		}
+		System.out.println("First max number is : " + firstmax);
+		System.out.println("second max number is : " + secondmax);
 	}
 }
